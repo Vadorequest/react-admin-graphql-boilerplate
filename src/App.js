@@ -61,7 +61,7 @@ class App extends Component {
     buildPrismaProvider({
       clientOptions: {
         uri:
-          "https://api-euwest.graphcms.com/v1/cjth1hf1j4t2801b9htl50mnp/staging"
+          'https://eu1.prisma.sh/flavian/ra-data-prisma/dev',
       },
       buildQuery: enhanceBuildQuery(buildQuery)
     }).then(dataProvider => this.setState({ dataProvider }));
