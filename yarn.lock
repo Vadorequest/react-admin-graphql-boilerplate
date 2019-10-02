@@ -2,6 +2,27 @@
 # yarn lockfile v1
 
 
+"@api-platform/admin@1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@api-platform/admin/-/admin-1.0.0.tgz#4da381e8adb9fa9c567a92961077f772208928e0"
+  integrity sha512-iy2spRL6fvxBviXPTzSFZhZMzo9xWvcUnwY3c+Xc7FVMtBniG80x/mKMqEpvAiXi5F9TKM16cPtrVnPv5z3OnQ==
+  dependencies:
+    "@api-platform/api-doc-parser" "^0.8.1"
+    jsonld "^1.2.1"
+    lodash.isplainobject "^4.0.6"
+    prop-types "^15.6.2"
+    react-admin "^2.9.0"
+
+"@api-platform/api-doc-parser@^0.8.1":
+  version "0.8.1"
+  resolved "https://registry.yarnpkg.com/@api-platform/api-doc-parser/-/api-doc-parser-0.8.1.tgz#256cd7719d85b1f54440841a77679c19c9b97058"
+  integrity sha512-AfyeuQL58zjayiiB5fysY88twkDfGTWCYr7R/mtWxGJVXJHp0nJwaNWHQD00VzFYLoDXcDq1l/dZjOZA79YUAg==
+  dependencies:
+    "@babel/runtime" "^7.0.0"
+    jsonld "^1.5.0"
+    lodash.get "^4.4.2"
+    lodash.uniq "^4.5.0"
+
 "@babel/runtime@7.0.0-beta.42":
   version "7.0.0-beta.42"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.0.0-beta.42.tgz#352e40c92e0460d3e82f49bd7e79f6cda76f919f"
@@ -24,7 +45,7 @@
   dependencies:
     regenerator-runtime "^0.12.0"
 
-"@babel/runtime@^7.1.2", "@babel/runtime@^7.2.0":
+"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.2.0":
   version "7.6.2"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.6.2.tgz#c3d6e41b304ef10dcf13777a33e7694ec4a9a6dd"
   integrity sha512-EXxN64agfUqqIGeEjI5dL5z0Sw0ZwWo1mLTi4mQowCZ42O59b7DRpZAnTC6OqdF28wMBMFKNb/4uFGrVaigSpg==
@@ -1748,6 +1769,11 @@ caniuse-lite@^1.0.30000748, caniuse-lite@^1.0.30000792:
   version "1.0.30000997"
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000997.tgz#ba44a606804f8680894b7042612c2c7f65685b7e"
   integrity sha512-BQLFPIdj2ntgBNWp9Q64LGUIEmvhKkzzHhUHR3CD5A9Lb7ZKF20/+sgadhFap69lk5XmK1fTUleDclaRFvgVUA==
+
+canonicalize@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/canonicalize/-/canonicalize-1.0.1.tgz#657b4f3fa38a6ecb97a9e5b7b26d7a19cc6e0da9"
+  integrity sha512-N3cmB3QLhS5TJ5smKFf1w42rJXWe6C1qP01z4dxJiI5v269buii4fLHWETDyf7yEd0azGLNC63VxNMiPd2u0Cg==
 
 capture-stack-trace@^1.0.0:
   version "1.0.1"
@@ -5086,6 +5112,17 @@ jsonify@~0.0.0:
   resolved "https://registry.yarnpkg.com/jsonify/-/jsonify-0.0.0.tgz#2c74b6ee41d93ca51b7b5aaee8f503631d252a73"
   integrity sha1-LHS27kHZPKUbe1qu6PUDYx0lKnM=
 
+jsonld@^1.2.1, jsonld@^1.5.0:
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/jsonld/-/jsonld-1.8.0.tgz#02960df11483a35c0c2d8d72ce13ff3d0bc2a324"
+  integrity sha512-a3bwbR0wqFstxKsGoimUIIKBdfJ+yb9kWK+WK7MpVyvfYtITMpUtF3sNoN1wG/W+jGDgya0ACRh++jtTozxtyQ==
+  dependencies:
+    canonicalize "^1.0.1"
+    rdf-canonize "^1.0.2"
+    request "^2.88.0"
+    semver "^5.6.0"
+    xmldom "0.1.19"
+
 jsprim@^1.2.2:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/jsprim/-/jsprim-1.4.1.tgz#313e66bc1e5cc06e438bc1b7499c2e5c56acb6a2"
@@ -5354,6 +5391,16 @@ lodash.defaults@^4.2.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/lodash.defaults/-/lodash.defaults-4.2.0.tgz#d09178716ffea4dde9e5fb7b37f6f0802274580c"
   integrity sha1-0JF4cW/+pN3p5ft7N/bwgCJ0WAw=
+
+lodash.get@^4.4.2:
+  version "4.4.2"
+  resolved "https://registry.yarnpkg.com/lodash.get/-/lodash.get-4.4.2.tgz#2d177f652fa31e939b4438d5341499dfa3825e99"
+  integrity sha1-LRd/ZS+jHpObRDjVNBSZ36OCXpk=
+
+lodash.isplainobject@^4.0.6:
+  version "4.0.6"
+  resolved "https://registry.yarnpkg.com/lodash.isplainobject/-/lodash.isplainobject-4.0.6.tgz#7c526a52d89b45c45cc690b88163be0497f550cb"
+  integrity sha1-fFJqUtibRcRcxpC4gWO+BJf1UMs=
 
 lodash.memoize@^4.1.2:
   version "4.1.2"
@@ -5790,6 +5837,11 @@ node-forge@0.8.2:
   version "0.8.2"
   resolved "https://registry.yarnpkg.com/node-forge/-/node-forge-0.8.2.tgz#b4bcc59fb12ce77a8825fc6a783dfe3182499c5a"
   integrity sha512-mXQ9GBq1N3uDCyV1pdSzgIguwgtVpM7f5/5J4ipz12PKWElmPpVWLDuWl8iXmhysr21+WmX/OJ5UKx82wjomgg==
+
+node-forge@^0.8.1:
+  version "0.8.5"
+  resolved "https://registry.yarnpkg.com/node-forge/-/node-forge-0.8.5.tgz#57906f07614dc72762c84cef442f427c0e1b86ee"
+  integrity sha512-vFMQIWt+J/7FLNyKouZ9TazT74PRV3wgv9UT4cRjC8BffxFbKXkgIWR42URCPSnHm/QDz6BOlb2Q0U4+VQT67Q==
 
 node-int64@^0.4.0:
   version "0.4.0"
@@ -7054,7 +7106,15 @@ rc@^1.0.1, rc@^1.1.6, rc@^1.2.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-admin@^2.3.0:
+rdf-canonize@^1.0.2:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/rdf-canonize/-/rdf-canonize-1.0.3.tgz#71dc56bb808a39d12e3ca17674c15f881cad648a"
+  integrity sha512-piLMOB5Q6LJSVx2XzmdpHktYVb8TmVTy8coXJBFtdkcMC96DknZOuzpAYqCWx2ERZX7xEW+mMi8/wDuMJS/95w==
+  dependencies:
+    node-forge "^0.8.1"
+    semver "^5.6.0"
+
+react-admin@^2.3.0, react-admin@^2.9.0:
   version "2.9.6"
   resolved "https://registry.yarnpkg.com/react-admin/-/react-admin-2.9.6.tgz#ee5d4198a03d9cbc157a10ecaa901464b54ae3b6"
   integrity sha512-AhhsbJxabP9SaA1hBAY12fEVL0GxlBPld+vcVAlThtb0zy8HVlUxdD1pqKcNnWClFmKsgP0LFEalcZP+vcgkzQ==
@@ -7578,7 +7638,7 @@ repeating@^2.0.0:
   dependencies:
     is-finite "^1.0.0"
 
-request@^2.79.0:
+request@^2.79.0, request@^2.88.0:
   version "2.88.0"
   resolved "https://registry.yarnpkg.com/request/-/request-2.88.0.tgz#9c2fca4f7d35b592efe57c7f0a55e81052124fef"
   integrity sha512-NAqBSrijGLZdM0WZNsInLJpkJokL72XYjUpnB0iwsRgxh7dB6COrHnTBNwN0E+lHDAJzu7kLAkDeY08z2/A0hg==
@@ -7831,7 +7891,7 @@ semver-diff@^2.0.0:
   dependencies:
     semver "^5.0.3"
 
-"semver@2 || 3 || 4 || 5", semver@^5.0.3, semver@^5.1.0, semver@^5.3.0, semver@^5.5.0:
+"semver@2 || 3 || 4 || 5", semver@^5.0.3, semver@^5.1.0, semver@^5.3.0, semver@^5.5.0, semver@^5.6.0:
   version "5.7.1"
   resolved "https://registry.yarnpkg.com/semver/-/semver-5.7.1.tgz#a954f931aeba508d307bbf069eff0c01c96116f7"
   integrity sha512-sauaDf/PZdVgrLTNYHRtpXa1iRiKcaebiKQ1BJdpQlWH2lCvexQdX55snPFyK7QzpudqbCI0qXFfOasHdyNDGQ==
@@ -9171,6 +9231,11 @@ xml-name-validator@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/xml-name-validator/-/xml-name-validator-2.0.1.tgz#4d8b8f1eccd3419aa362061becef515e1e559635"
   integrity sha1-TYuPHszTQZqjYgYb7O9RXh5VljU=
+
+xmldom@0.1.19:
+  version "0.1.19"
+  resolved "https://registry.yarnpkg.com/xmldom/-/xmldom-0.1.19.tgz#631fc07776efd84118bf25171b37ed4d075a0abc"
+  integrity sha1-Yx/Ad3bv2EEYvyUXGzftTQdaCrw=
 
 xtend@^4.0.0:
   version "4.0.2"
