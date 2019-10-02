@@ -1,44 +1,17 @@
-import React, { Component } from "react";
-import { Admin, Resource, GET_LIST } from "react-admin";
-import get from "lodash/get";
+import get from 'lodash/get';
 
-import buildPrismaProvider, { buildQuery } from "ra-data-opencrud";
-import overridenQueries from "./queries/index";
+import buildPrismaProvider, { buildQuery } from 'ra-data-opencrud';
+import React, { Component } from 'react';
+import { Admin, Resource } from 'react-admin';
 
-import { ProductEdit, ProductList } from "./components/products/index";
-import { ShopEdit, ShopList } from "./components/shops/index";
-import { OrderList } from "./components/orders/index";
-import {
-  CategoryCreate,
-  CategoryEdit,
-  CategoryList,
-  CategoryShow
-} from "./components/categories/index";
-import {
-  BrandCreate,
-  BrandEdit,
-  BrandList,
-  BrandShow
-} from "./components/brands/index";
-import {
-  AttributeCreate,
-  AttributeEdit,
-  AttributeList,
-  AttributeShow
-} from "./components/attributes/index";
-import {
-  OptionCreate,
-  OptionEdit,
-  OptionList,
-  OptionShow
-} from "./components/options/index";
-
-import "./App.css";
+import './App.css';
+import { OrganisationList, OrganisationShow } from './components/organisations';
+import overridenQueries from './queries/index';
 
 const enhanceBuildQuery = buildQuery => introspectionResults => (
   fetchType,
   resourceName,
-  params
+  params,
 ) => {
   const fragment = get(overridenQueries, `${resourceName}.${fetchType}`);
 
@@ -46,7 +19,7 @@ const enhanceBuildQuery = buildQuery => introspectionResults => (
     fetchType,
     resourceName,
     params,
-    fragment
+    fragment,
   );
 };
 
@@ -61,9 +34,9 @@ class App extends Component {
     buildPrismaProvider({
       clientOptions: {
         uri:
-          'https://eu1.prisma.sh/flavian/ra-data-prisma/dev',
+          "https://cache.staging.demo.the-funding-place.org/cache-query"
       },
-      buildQuery: enhanceBuildQuery(buildQuery)
+      buildQuery: enhanceBuildQuery(buildQuery),
     }).then(dataProvider => this.setState({ dataProvider }));
   }
 
@@ -75,43 +48,44 @@ class App extends Component {
     }
 
     return (
-      <Admin title="Prisma e-commerce" dataProvider={dataProvider}>
-        <Resource name="Product" list={ProductList} edit={ProductEdit} />
-        <Resource name="Order" list={OrderList} />
-        <Resource
-          name="Brand"
-          list={BrandList}
-          edit={BrandEdit}
-          show={BrandShow}
-          create={BrandCreate}
-        />
-        <Resource
-          name="Attribute"
-          list={AttributeList}
-          edit={AttributeEdit}
-          show={AttributeShow}
-          create={AttributeCreate}
-        />
-        <Resource
-          name="Category"
-          list={CategoryList}
-          edit={CategoryEdit}
-          show={CategoryShow}
-          create={CategoryCreate}
-        />
-        <Resource name="Shop" list={ShopList} edit={ShopEdit} />
-        <Resource
-          name="Option"
-          list={OptionList}
-          edit={OptionEdit}
-          show={OptionShow}
-          create={OptionCreate}
-        />
-        <Resource name="OptionValue" />
-        <Resource name="SelectedOption" />
-        <Resource name="Variant" />
-        <Resource name="User" />
-        <Resource name="OrderLineItem" />
+      <Admin title="TFP Back Office" dataProvider={dataProvider}>
+        <Resource name="Organisation" list={OrganisationList} show={OrganisationShow} />
+        {/*<Resource name="Product" list={ProductList} edit={ProductEdit} />*/}
+        {/*<Resource name="Order" list={OrderList} />*/}
+        {/*<Resource*/}
+        {/*  name="Brand"*/}
+        {/*  list={BrandList}*/}
+        {/*  edit={BrandEdit}*/}
+        {/*  show={BrandShow}*/}
+        {/*  create={BrandCreate}*/}
+        {/*/>*/}
+        {/*<Resource*/}
+        {/*  name="Attribute"*/}
+        {/*  list={AttributeList}*/}
+        {/*  edit={AttributeEdit}*/}
+        {/*  show={AttributeShow}*/}
+        {/*  create={AttributeCreate}*/}
+        {/*/>*/}
+        {/*<Resource*/}
+        {/*  name="Category"*/}
+        {/*  list={CategoryList}*/}
+        {/*  edit={CategoryEdit}*/}
+        {/*  show={CategoryShow}*/}
+        {/*  create={CategoryCreate}*/}
+        {/*/>*/}
+        {/*<Resource name="Shop" list={ShopList} edit={ShopEdit} />*/}
+        {/*<Resource*/}
+        {/*  name="Option"*/}
+        {/*  list={OptionList}*/}
+        {/*  edit={OptionEdit}*/}
+        {/*  show={OptionShow}*/}
+        {/*  create={OptionCreate}*/}
+        {/*/>*/}
+        {/*<Resource name="OptionValue" />*/}
+        {/*<Resource name="SelectedOption" />*/}
+        {/*<Resource name="Variant" />*/}
+        {/*<Resource name="User" />*/}
+        {/*<Resource name="OrderLineItem" />*/}
       </Admin>
     );
   }
